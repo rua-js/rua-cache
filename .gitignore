@@ -1,0 +1,8 @@
+# ide
+.idea
+
+# compiled files
+lib
+
+# macOS
+.DS_Store
