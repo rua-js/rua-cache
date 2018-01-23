@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/rua-js/rua-cache/issues"
   },
-  "homepage": "https://github.com/rua-js/rua-cache#readme"
+  "homepage": "https://github.com/rua-js/rua-cache#readme",
+  "dependencies": {
+    "@types/react-native": "^0.52.2"
+  }
 }
