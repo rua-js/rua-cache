@@ -1,5 +1,7 @@
 import { RuaCacheInterface } from './Interface'
 
-export default class RuaCache implements RuaCacheInterface {
+class RuaCache implements RuaCacheInterface {
 
 }
+
+export default RuaCache
