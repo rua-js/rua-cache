@@ -1,7 +1,14 @@
-export default interface RuaCacheInterface {
+import RuaCache from '../RuaCache'
+
+// import { Any } from 'rua-core/lib/Types'
+
+interface RuaCacheInterface {
   set(key: string, value: string, time: number): boolean
-  get(key: string, defaultValue: string | Function): any
-  remove(key: string): any
-  removeAll(): any
-  restore(): Promise
+  get(key: string, defaultValue: any): any
+  remove(key: string): boolean
+  clear(): boolean
+  all(): any
+  restore(): Promise<void>
 }
+
+export default RuaCacheInterface
