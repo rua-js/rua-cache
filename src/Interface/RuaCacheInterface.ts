@@ -7,6 +7,8 @@ interface RuaCacheInterface {
   get(key: string, defaultValue: any): any
   remove(key: string): boolean
   clear(): boolean
+  length(): number
+  keys(): string[]
   all(): any
   restore(): Promise<void>
 }
