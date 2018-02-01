@@ -6,18 +6,13 @@ import { AbstractRuaPackage } from 'rua-core/lib/Abstractions'
 
 class RuaCache extends AbstractRuaPackage implements RuaCacheInterface {
 
-  private prefix: string = 'RuaCache-'
+  protected prefix: string = 'RuaCache-'
 
-  private storage: RuaStorage
+  protected storage: RuaStorage = storage
 
-  private count: number
+  protected count: number
 
-  private list: string[] = []
-
-  constructor() {
-    super()
-    this.storage = storage
-  }
+  protected list: string[] = []
 
   public get(key: string, defaultValue: any): any {
     // defaultValue will be returned if no data with the specific key
