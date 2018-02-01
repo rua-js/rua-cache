@@ -26,5 +26,8 @@
     "lodash": "^4.17.4",
     "rua-core": "^0.2.1",
     "rua-storage": "^0.3.2"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.99"
   }
 }
