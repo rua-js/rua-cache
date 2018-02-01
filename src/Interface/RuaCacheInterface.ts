@@ -4,9 +4,9 @@ import RuaCache from '../RuaCache'
 
 interface RuaCacheInterface {
   get(key: string, defaultValue: any): any
-  set(key: string, value: string, time: number): boolean
-  remove(key: string): boolean
-  clear(): boolean
+  set(key: string, value: string, time: number): void
+  remove(key: string): void
+  clear(): void
   length(): number
   keys(): string[]
   all(): any
