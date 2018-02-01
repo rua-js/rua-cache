@@ -24,7 +24,7 @@
   "homepage": "https://github.com/rua-js/rua-cache#readme",
   "dependencies": {
     "lodash": "^4.17.4",
-    "rua-core": "^0.2.0",
-    "rua-storage": "^0.3.0"
+    "rua-core": "^0.2.1",
+    "rua-storage": "^0.3.1"
   }
 }

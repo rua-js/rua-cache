@@ -59,16 +59,17 @@ process@~0.5.1:
   version "0.5.2"
   resolved "https://registry.npmjs.org/process/-/process-0.5.2.tgz#1638d8a8e34c2f440a91db95ab9aeb677fc185cf"
 
-rua-core@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/rua-core/-/rua-core-0.2.0.tgz#1d69b9f277b82964f6e8829d7224eb7813055a06"
+rua-core@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/rua-core/-/rua-core-0.2.1.tgz#320846218f31f18867f8ee1f4c43691e273644cc"
   dependencies:
     global "^4.3.2"
     invariant "^2.2.2"
 
-rua-storage@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.npmjs.org/rua-storage/-/rua-storage-0.3.0.tgz#57444562707ed6826895bb40da3d2f925a65e226"
+rua-storage@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.npmjs.org/rua-storage/-/rua-storage-0.3.1.tgz#bdd2b1cafb73c5797e3a2ee554d552b200521950"
   dependencies:
     localforage "^1.5.6"
-    rua-core "^0.2.0"
+    lodash "^4.17.4"
+    rua-core "^0.2.1"

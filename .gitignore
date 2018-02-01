@@ -9,3 +9,6 @@ lib
 
 # error log
 /yarn-error.log
+
+# dep
+/node_modules
