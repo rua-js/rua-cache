@@ -29,15 +29,21 @@ class RuaCache extends AbstractRuaPackage implements RuaCacheInterface {
     return this.store[key]
   }
 
-  public set(key: string, value: string, time: number): boolean {
+  public set(key: string, value: string, time: number): void {
   }
 
-  public remove(key: string): boolean
+  public remove(key: string): void {
+    delete this.store[key]
 
-  public clear(): boolean {
+  }
+
+  public clear(): void {
     this.count = 0
     this.list = []
-
+    // data removal
+    this.storage.remove(this.list)
+    // list removal
+    this.storage.remove(this.getListKey())
   }
 
   public length(): number {
@@ -53,12 +59,15 @@ class RuaCache extends AbstractRuaPackage implements RuaCacheInterface {
   }
 
   public async restore(): Promise<void> {
-    const listKey: string = `${this.prefix}list`
+    const listKey: string = this.getListKey()
     const list: string = <string>await storage.get(listKey)
     this.list = JSON.parse(list)
     this.store = await storage.get(this.list)
   }
 
+  protected getListKey(): string {
+    return `${this.prefix}list`
+  }
 }
 
 export default RuaCache
