@@ -3,6 +3,8 @@ import RuaStorage from 'rua-storage/lib/RuaStorage'
 
 import { RuaCacheInterface } from './Interface'
 import { AbstractRuaPackage } from 'rua-core/lib/Abstractions'
+import AnyData from 'rua-core/lib/Types/AnyData'
+import AnyObject from 'rua-core/lib/Types/AnyObject'
 
 class RuaCache extends AbstractRuaPackage implements RuaCacheInterface {
 
@@ -54,10 +56,14 @@ class RuaCache extends AbstractRuaPackage implements RuaCacheInterface {
   }
 
   public async restore(): Promise<void> {
-    const listKey: string = this.getListKey()
+    // Get list key
+    const listKey: string = <string>this.getListKey()
+    // Get list data
     const list: string = <string>await storage.get(listKey)
-    this.list = JSON.parse(list)
-    this.store = await storage.get(this.list)
+    // Parse list data
+    this.list = <string[]>JSON.parse(list)
+    // Load all saved cache data to store
+    this.store = <AnyObject>await storage.get(this.list)
   }
 
   protected getListKey(): string {
