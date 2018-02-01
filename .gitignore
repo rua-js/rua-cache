@@ -6,3 +6,6 @@ lib
 
 # macOS
 .DS_Store
+
+# error log
+/yarn-error.log
