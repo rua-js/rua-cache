@@ -66,9 +66,9 @@ rua-core@^0.2.1:
     global "^4.3.2"
     invariant "^2.2.2"
 
-rua-storage@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.npmjs.org/rua-storage/-/rua-storage-0.3.1.tgz#bdd2b1cafb73c5797e3a2ee554d552b200521950"
+rua-storage@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.npmjs.org/rua-storage/-/rua-storage-0.3.2.tgz#02cf32903e61367bc3186c04af7c2636cbea3bd4"
   dependencies:
     localforage "^1.5.6"
     lodash "^4.17.4"
