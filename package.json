@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/rua-js/rua-cache#readme",
   "dependencies": {
-    "@types/react-native": "^0.52.2"
+    "lodash": "^4.17.4",
+    "rua-core": "^0.2.0",
+    "rua-storage": "^0.3.0"
   }
 }
