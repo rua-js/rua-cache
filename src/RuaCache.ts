@@ -84,7 +84,7 @@ class RuaCache extends AbstractRuaPackage implements RuaCacheInterface {
     // Get list key
     const listKey: string = <string>this.getListKey()
     // Get list data
-    const list: string = <string>await storage.get(listKey)
+    const list: string = <string>await storage.get(listKey, [])
     // Parse list data
     this.list = <string[]>JSON.parse(list)
     // Load all saved cache data to store
@@ -98,7 +98,7 @@ class RuaCache extends AbstractRuaPackage implements RuaCacheInterface {
   }
 
   protected getItemKey(key: string): string {
-    return `${this.prefix}key`
+    return `${this.prefix}${key}`
   }
 }
 
