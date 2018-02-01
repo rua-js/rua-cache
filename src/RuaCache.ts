@@ -32,21 +32,23 @@ class RuaCache extends AbstractRuaPackage implements RuaCacheInterface {
   protected list: string[] = []
 
   public get(key: string, defaultValue: any): AnyData {
+    const realKeyName = this.getItemKey(key)
     // defaultValue will be returned if no data with the specific key
-    if (!this.list.includes(key)) {
+    if (!this.list.includes(realKeyName)) {
       return defaultValue
     }
     // retrieve data from cache
-    return this.store[key]
+    return this.store[realKeyName]
   }
 
   public set(key: string, value: string, time: number): void {
   }
 
   public remove(key: string): void {
+    const realKeyName = this.getItemKey(key)
     // Cache removal
-    _.unset(this.store, key)
-    _.pull(this.list, key)
+    _.unset(this.store, realKeyName)
+    _.pull(this.list, realKeyName)
 
     // Sync list
     this.storage.set(
@@ -54,7 +56,7 @@ class RuaCache extends AbstractRuaPackage implements RuaCacheInterface {
       this.list,
     )
     // Sync item
-    this.storage.remove(key)
+    this.storage.remove(realKeyName)
   }
 
   public clear(): void {
@@ -93,6 +95,10 @@ class RuaCache extends AbstractRuaPackage implements RuaCacheInterface {
 
   protected getListKey(): string {
     return `${this.prefix}list`
+  }
+
+  protected getItemKey(key: string): string {
+    return `${this.prefix}key`
   }
 }
 
